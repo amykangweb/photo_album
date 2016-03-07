@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave', '0.10.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
