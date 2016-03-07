@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :check_user, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -57,6 +58,11 @@ class PostsController < ApplicationController
   end
 
   private
+    def check_user
+      unless current_user.admin
+        redirect_to root_url, alert: "You are not authorized!"
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])

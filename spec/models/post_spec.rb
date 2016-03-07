@@ -10,4 +10,9 @@ RSpec.describe Post, type: :model do
     post = FactoryGirl.build(:post, caption: nil)
     expect(post).not_to be_valid
   end
+
+  it "should be valid with both image and caption" do
+    post = FactoryGirl.build(:post)
+    expect(post).to be_valid
+  end
 end
