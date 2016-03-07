@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should not be valid without image" do
+    post = FactoryGirl.build(:post, image: nil)
+    expect(post).not_to be_valid
+  end
 end
