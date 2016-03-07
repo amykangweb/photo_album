@@ -20,6 +20,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy'
+  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.0'
 end
 

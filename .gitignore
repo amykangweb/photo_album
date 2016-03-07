@@ -21,3 +21,6 @@
 
 # Ignore images uploaded in development
 /public/uploads
+
+# Ignore env file
+.env
