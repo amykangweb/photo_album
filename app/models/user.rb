@@ -1,9 +1,15 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  before_create :stop_intruder
 
+  def stop_intruder
+    if self.email != Rails.application.secrets.my_email
+      self.errors.add(:email, "You are not authorized!")
+      return false
+    end
+  end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
