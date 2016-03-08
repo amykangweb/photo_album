@@ -6,10 +6,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-  end
-
-  # GET /posts/new
-  def new
     @post = Post.new
   end
 
@@ -21,15 +17,9 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    @posts = Post.all
     respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+      format.js { render 'index.js.erb' }
     end
   end
 

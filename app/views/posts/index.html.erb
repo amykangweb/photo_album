@@ -2,17 +2,15 @@
 Hi there!
 <% end %>
 
-<p>
-<% @posts.each do |post| %>
-  <%= image_tag post.image.url %>
-  <%= post.caption %>
-  <% if user_signed_in? && current_user.admin %>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-<% end %>
-</p>
+<div class="posts-list">
+  <%= render 'posts', posts: @posts %>
+</div>
 
 <% if user_signed_in? && current_user.admin %>
-<p><%= link_to 'New Post', new_post_path %></p>
+<p><a class="new-post">New Post</a></p>
 <% end %>
+
+<div class="hidden-form">
+  <div class="hidden-form-bg"></div>
+  <%= render 'form', post: @post %>
+</div>
