@@ -10,6 +10,7 @@ gem 'omniauth-github'
 gem 'pg'
 gem 'puma'
 gem 'rails', '4.2.5.1'
+gem 'remotipart', '~> 1.2'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
