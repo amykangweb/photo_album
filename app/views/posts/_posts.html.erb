@@ -1,3 +1,5 @@
+<%= will_paginate posts %>
+
 <% posts.each do |post| %>
   <%= image_tag post.image.url %>
   <%= post.caption %>
@@ -6,3 +8,5 @@
     <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
+
+<%= will_paginate posts %>
