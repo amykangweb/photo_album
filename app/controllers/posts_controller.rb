@@ -18,8 +18,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @posts = Post.all
-    respond_to do |format|
-      format.js { render 'index.js.erb' }
+    if @post.save
+      respond_to do |format|
+        format.js { render 'index.js.erb' }
+      end
     end
   end
 
