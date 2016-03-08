@@ -6,4 +6,4 @@ By Amy Kang
 
 <h2>Description</h2>
 
-Simple photo album app with rails, bootstrap, with tdd and bdd.
+Single page, single user, Rails photo album using Rails AJAX and JQuery. Includes tdd and bdd with rspec. <em>In Progress!</em>
