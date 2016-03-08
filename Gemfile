@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate', '~> 3.0.6'
 
 group :production do
   gem 'rails_12factor'
@@ -23,9 +24,9 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'capybara'
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'launchy'
-  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.0'
 end
 
