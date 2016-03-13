@@ -2,7 +2,7 @@
 
 <div class="row row-centered">
 <% posts.each do |post| %>
-  <div class="col-lg-4">
+  <div class="col-lg-4 <%= post.id %>">
   <div class="image-container">
     <%= image_tag post.image.url %>
   </div>
@@ -10,12 +10,20 @@
   <p class="text-center"><em><%= truncate(post.caption, length: 45) %></em></p>
   <div class="float-right">
   <% if user_signed_in? && current_user.admin %>
-    <%= link_to 'Edit', edit_post_path(post) %>
+    <a data-post="<%= post.id %>" class="edit-post">Edit</a>
     <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
   </div>
   </div>
+
+<div class="hidden-update <%= post.id %>">
+  <div class="hidden-form-bg"></div>
+  <h3 class="navbar-logo">My Photo Album</h3>
+  <%= render 'edit', post: post %>
+</div>
 <% end %>
 </div>
 
 <%= will_paginate posts %>
+
+<%= javascript_include_tag 'edit' %>

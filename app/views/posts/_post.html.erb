@@ -1,0 +1,13 @@
+<div class="image-container">
+  <%= image_tag post.image.url %>
+</div>
+<div class="tiny_spacer"></div>
+<p class="text-center"><em><%= truncate(post.caption, length: 45) %></em></p>
+<div class="float-right">
+<% if user_signed_in? && current_user.admin %>
+  <a data-post="<%= post.id %>" class="edit-post">Edit</a>
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</div>
+
+<%= javascript_include_tag 'edit' %>

@@ -1,6 +1,7 @@
 <i class="glyphicon glyphicon-remove remove-form"></i>
 <div class="post-form">
 <div class="inner-post-form">
+<div class="small_spacer"></div>
 <h3>New Photo</h3>
 
 <%= form_for(post, remote: true) do |f| %>
@@ -8,7 +9,6 @@
 </div>
 
   <div class="field">
-    <%= f.label :image %><br>
     <%= f.file_field :image, accept: 'image/jpeg,image/jpg,image/gif,image/png' %>
   </div>
   <div class="field">
