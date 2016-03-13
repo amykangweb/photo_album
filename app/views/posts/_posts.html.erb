@@ -1,9 +1,11 @@
 <%= will_paginate posts %>
 
-<div class="row">
+<div class="row row-centered">
 <% posts.each do |post| %>
   <div class="col-lg-4">
-  <div class="image-container"><%= image_tag post.image.url %></div>
+  <div class="image-container">
+    <%= image_tag post.image.url %>
+  </div>
   <div class="tiny_spacer"></div>
   <p class="text-center"><em><%= truncate(post.caption, length: 50) %></em></p>
   <div class="float-right">

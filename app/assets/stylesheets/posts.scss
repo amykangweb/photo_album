@@ -1,6 +1,4 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Post/Photo specific styles
 
 .hidden-form {
   display: none;
@@ -38,18 +36,32 @@
   margin: 0 auto;
 }
 
+.row-centered {
+  text-align: center;
+}
+
 .posts-list {
-  margin-top: -75px;
+  display: inline-block;
+  float: none;
   .col-lg-4 {
-    height: 325px;
+    display: inline-block;
+    float: none;
+    height: 350px;
+    width: 315px;
     margin-top: 75px;
-    border: 5px solid black;
+    padding-top: 20px;
+    margin: 30px;
+    background: #fff;
+    -webkit-box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.75);
   }
 }
 
 .image-container {
+  background: image-url("starring.png");
   height: 250px;
-  width: 250px;
+  width: 260px;
   margin: 0 auto;
   overflow: hidden;
 }
