@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  $('.visitor-menu').click(function(){
+    $('.hidden-menu').show();
+    $(this).hide();
+  });
+  $('.glyphicon-remove').click(function(){
+    $('.hidden-menu').hide();
+    $('.visitor-menu').show();
+  })
+});

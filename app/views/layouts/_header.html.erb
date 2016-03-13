@@ -9,16 +9,3 @@
   <div class="hidden-form-bg"></div>
   <%= render 'layouts/visitor_menu' %>
 </div>
-
-<script>
-  $(document).ready(function(){
-    $('.visitor-menu').click(function(){
-      $('.hidden-menu').show();
-      $(this).hide();
-    });
-    $('.glyphicon-remove').click(function(){
-      $('.hidden-menu').hide();
-      $('.visitor-menu').show();
-    })
-  });
-</script>
