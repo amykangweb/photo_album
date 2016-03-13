@@ -1,12 +1,19 @@
 <%= will_paginate posts %>
 
+<div class="row">
 <% posts.each do |post| %>
-  <%= image_tag post.image.url %>
-  <%= post.caption %>
+  <div class="col-lg-4">
+  <div class="image-container"><%= image_tag post.image.url %></div>
+  <div class="tiny_spacer"></div>
+  <p class="text-center"><em><%= truncate(post.caption, length: 50) %></em></p>
+  <div class="float-right">
   <% if user_signed_in? && current_user.admin %>
     <%= link_to 'Edit', edit_post_path(post) %>
     <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
+  </div>
+  </div>
 <% end %>
+</div>
 
 <%= will_paginate posts %>

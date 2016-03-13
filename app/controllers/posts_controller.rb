@@ -55,7 +55,7 @@ class PostsController < ApplicationController
   private
 
     def paginate
-      @posts = Post.all.paginate(page: params[:page], per_page: 1)
+      @posts = Post.all.paginate(page: params[:page], per_page: 10)
     end
 
     def check_user

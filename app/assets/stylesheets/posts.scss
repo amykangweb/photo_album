@@ -22,7 +22,7 @@
 
 .post-form {
   position: absolute;
-  top: 50px;
+  top: 100px;
   left: 0;
   right: 0;
   width: 40%;
@@ -36,4 +36,20 @@
 .inner-post-form {
   width: 95%;
   margin: 0 auto;
+}
+
+.posts-list {
+  margin-top: -75px;
+  .col-lg-4 {
+    height: 325px;
+    margin-top: 75px;
+    border: 5px solid black;
+  }
+}
+
+.image-container {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  overflow: hidden;
 }
