@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery.remotipart
 //= require bootstrap-sprockets
+//= require admin
 //= require form
 //= require pagination
 //= require visitor
