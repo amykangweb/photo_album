@@ -23,4 +23,55 @@ nav {
   color: #fff;
   font-size: 25px;
   margin-top: 15px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.hidden-menu {
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 11;
+  p {
+    margin-top: 20px;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.navbar-logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  margin: 0 auto;
+  z-index: 11;
+  color: #fff;
+  font-family: $logo;
+  float: left;
+}
+
+.glyphicon-remove {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  margin: 0 auto;
+  z-index: 11;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.85;
+  }
 }

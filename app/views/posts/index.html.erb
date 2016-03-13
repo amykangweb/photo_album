@@ -1,12 +1,3 @@
 <div class="posts-list">
   <%= render 'posts', posts: @posts %>
 </div>
-
-<% if user_signed_in? && current_user.admin %>
-<p><a class="new-post">New Post</a></p>
-<% end %>
-
-<div class="hidden-form">
-  <div class="hidden-form-bg"></div>
-  <%= render 'form', post: @post %>
-</div>

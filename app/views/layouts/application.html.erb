@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.admin %>
   <%= render 'layouts/navbar' %>
 <% else %>
   <%= render 'layouts/header' %>
@@ -17,6 +17,12 @@
 <div class="container">
 
 <%= yield %>
+</div>
+
+<div class="hidden-form">
+  <div class="hidden-form-bg"></div>
+  <h3 class="navbar-logo">My Photo Album</h3>
+  <%= render 'form', post: @post %>
 </div>
 
 </body>

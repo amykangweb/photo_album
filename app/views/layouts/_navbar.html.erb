@@ -1,6 +1,24 @@
 <nav>
   <div class="inner-nav">
     <h3 class="logo">My Photo Album</h3>
-    <i class="glyphicon glyphicon-align-justify"></i>
+    <i class="glyphicon glyphicon-align-justify admin-menu"></i>
   </div>
 </nav>
+
+<div class="hidden-menu">
+  <div class="hidden-form-bg"></div>
+  <%= render 'layouts/admin_menu' %>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.admin-menu').click(function(){
+      $('.hidden-menu').show();
+      $(this).hide();
+    });
+    $('.glyphicon-remove').click(function(){
+      $('.hidden-menu').hide();
+      $('.admin-menu').show();
+    })
+  });
+</script>
