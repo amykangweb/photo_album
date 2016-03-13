@@ -4,17 +4,8 @@
 <h3>New Photo</h3>
 
 <%= form_for(post, remote: true) do |f| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div id="error_explanation">
+</div>
 
   <div class="field">
     <%= f.label :image %><br>
@@ -27,18 +18,8 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
 </div>
 
 </div>
-
-<script>
-$(document).ready(function(){
-  $('.new-post').click(function(){
-    $('.hidden-form').show();
-  });
-  $('.hidden-form-bg').click(function(){
-    $('.hidden-form').hide();
-  });
-});
-</script>

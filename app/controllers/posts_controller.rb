@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action :check_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :paginate, only: [:index, :create, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.paginate(page: params[:page], per_page: 1)
     @post = Post.new
   end
 
@@ -17,10 +17,13 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @posts = Post.all
     if @post.save
       respond_to do |format|
         format.js { render 'index.js.erb' }
+      end
+    else
+      respond_to do |format|
+        format.js { render 'error.js.erb' }
       end
     end
   end
@@ -50,6 +53,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+    def paginate
+      @posts = Post.all.paginate(page: params[:page], per_page: 1)
+    end
+
     def check_user
       unless current_user.admin
         redirect_to root_url, alert: "You are not authorized!"
