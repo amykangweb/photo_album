@@ -8,9 +8,13 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
+  <%= render 'layouts/navbar' %>
+<% else %>
+  <%= render 'layouts/header' %>
+<% end %>
+
 <div class="container">
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
 <%= yield %>
 </div>
