@@ -4,6 +4,10 @@
 
 By Amy Kang
 
+<h2>Status</h2>
+
+<em>In Progress!</em>
+
 <h2>Description</h2>
 
-Single page, single user, Rails photo album. No unnecessary, heavy, front-end framework. Just plain Rails AJAX and JQuery. Clean and simple. Includes tdd and bdd with rspec. <em>In Progress!</em>
+Single page, single user, Rails photo album. No front-end framework needed. Just plain Rails AJAX and JQuery. Clean and simple. Includes tdd and bdd with rspec.
